@@ -3,13 +3,13 @@ services:
     image: jenkins/jenkins:lts
     container_name: jenkins
     ports:
-      - "8080:8080"  # Porta do Jenkins
-      - "50000:50000"  # Porta para comunicação com agentes
+      - "8080:8080"
+      - "50000:50000"
     volumes:
-      - jenkins_home:/var/jenkins_home  # Persistência dos dados do Jenkins
-    restart: always  # Reinicia automaticamente em caso de falha
+      - jenkins_home:/var/jenkins_home 
+    restart: always
     environment:
-      JAVA_OPTS: "-Djenkins.install.runSetupWizard=false"  # Opcional: pula o setup inicial, configurável depois.
+      JAVA_OPTS: "-Djenkins.install.runSetupWizard=false"
 
 volumes:
   jenkins_home:
